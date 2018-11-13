@@ -1,0 +1,26 @@
+#include <stdio.h>
+int getint(int min, int max);
+int main ()
+{
+	int min ;
+	int max ;
+	scanf("%d,%d",&min,&max);
+	getint(min,max);
+	return 0;
+}
+int getint(int min, int max)
+{
+	int n=0;
+	for (;;)
+	{
+	printf("Please enter an integer [%d..%d]:\n",min,max );
+
+	scanf("%d",&n);
+
+	if(n>=min&&n<=max)
+	{
+		printf("The integer you have entered is:%d\n",n);
+		break;
+	}
+	}
+}
