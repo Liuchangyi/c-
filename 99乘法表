@@ -1,0 +1,31 @@
+#include <stdio.h>
+int main()
+{
+	int n;
+	int i;
+	int j;
+	printf("Input n:\n");
+	scanf("%d",&n);
+	// n=9;
+	for ( i = 1; i <= n ; i++)
+	{
+		printf("%4d",i);
+	}
+	printf("\n");
+	for (  i = 1; i <= n ; i++)
+	{
+		printf("%4c",'-');
+	}
+
+	printf("\n");
+
+	for (  i = 1; i <= n; i++)
+	{
+		for ( j = 1; j <= i; j++)
+		{
+			printf("%4d",j*i );
+		}
+		printf("\n");
+	}
+	return 0;
+}
