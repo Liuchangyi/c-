@@ -1,0 +1,30 @@
+#include <stdio.h>
+int main()
+{
+	int a[2][12]={{31,29,31,30,31,30,31,31,30,31,30,31},
+				  {31,28,31,30,31,30,31,31,30,31,30,31}};
+	int year,mouth,day;
+	int days=0;
+	int mouth0;
+	scanf("%d %d %d",&year,&mouth,&day);
+
+	if((year%4==0&&year%100!=0)||year%400==0)
+	{
+		for(mouth0=0;mouth0<mouth-1;mouth0++)
+		{
+			days=days+a[0][mouth0];
+		}
+	}
+    else
+    {
+    	for(mouth0=0;mouth0<mouth-1;mouth0++)
+		{
+			days=days+a[1][mouth0];
+		}
+    }
+
+	printf("%d\n",days+day );
+
+	return 0;
+    
+}
