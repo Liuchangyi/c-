@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+	struct date{
+		int year;
+		int mouth;
+		int day;
+
+	};
+
+int main()
+{
+	struct date today0 = {2018,11,24};
+	struct date today1 = {.year=2018,.mouth=11};
+	printf("%i-%i-%i\n",today0.year,today0.mouth,today0.day );
+	printf("%i-%i-%i\n",today1.year,today1.mouth,today1.day );
+
+
+} 
