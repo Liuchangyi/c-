@@ -1,0 +1,29 @@
+#include <stdio.h>
+#define N 90
+char *MyStrcat(char *dstStr,char *srcStr);
+int main()
+{
+    char first[2*N];
+    char secend[N];
+    printf("Please input the first string : ");
+    fgets(first,2*N*sizeof(char),stdin);
+    printf("Please input the secend string : ");
+    fgets(secend,N*sizeof(char),stdin);
+    printf("The result is : %s\n",MyStrcat(first,secend) );
+    return 0;
+}
+char *MyStrcat(char *dstStr,char *srcStr)
+{
+    char *pStr=dstStr;
+    while(*dstStr!='\0')
+    {
+        dstStr++;
+    }
+
+    for (;*srcStr!='\0';dstStr++,srcStr++)
+    {
+        *dstStr=*srcStr;
+    }
+    *dstStr='\0';
+    return pStr;
+}
