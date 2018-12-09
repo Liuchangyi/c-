@@ -1,0 +1,72 @@
+#include <stdio.h>
+#define count 5
+#define count1 4
+int main()
+{
+	int exim[count][count1];
+	char score[count]={0};
+	int  a[count]={0};
+	int PH[count];
+	int i;
+	int j;
+	int sum;
+
+// import
+
+	for (i = 0; i < count; i++)
+	{
+printf( "Enter No. and score as: MT EN PH\n");
+
+		for (j = 0; j < count1; j++)
+		{
+			scanf("%d ",&exim[i][j]);
+		}
+	}
+// math PH
+	for (i = 0; i < count; ++i)
+	{
+		 sum=0;
+		for ( j = 1; j < count1; ++j)
+		{
+			sum+=exim[i][j];
+		}
+		PH[i]=sum;
+	}
+
+	for (i = 0; i < count; ++i)
+	{
+		for (j = 0; j < count1; ++j)
+		{
+			if(exim[i][j]>=90)
+			{
+				a[i]++;
+			}
+		}
+		if (a[i]==3)
+		{
+			score[i]='Y';
+		}
+		else
+		{
+			score[i]='N';
+		}
+	}
+	
+// put out
+
+printf("NO\tMT\tEN\tPH\tSUM\tV\t>90\n");
+printf("------------------------------------------------------\n");
+for (i = 0; i < count; ++i)
+	{
+		for ( j = 0; j < count1; ++j)
+		{
+			printf("%d\t",exim[i][j]);
+		}
+		printf("%d\t",PH[i] );
+		printf("%d\t",PH[i]/(count1-1));
+		printf("%c\n",score[i]);
+
+	}	
+
+	return 0;
+}
